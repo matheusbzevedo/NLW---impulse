@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
 interface IPayload {
@@ -7,7 +7,7 @@ interface IPayload {
 
 export function ensureAuthenticated(
   request: Request,
-  reponse: Response,
+  response: Response,
   next: NextFunction
 ) {
   const authToken = request.headers.authorization;
