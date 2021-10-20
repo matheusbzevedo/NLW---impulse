@@ -2,11 +2,11 @@ import "dotenv/config";
 import express from 'express'
 import routes from './routes';
 
-const app = express()
-app.use(express.json());
+const app = express(),
+  port = process.env.PORT|| 4000;
 
-app.use(routes);
 
-const port = process.env.PORT|| 4000
-
-app.listen(port, () => console.log(`server is running on ${port}`))
+app
+.use(express.json())
+.use(routes)
+.listen(port, () => console.log(`Server is running on PORT: ${port}`));
