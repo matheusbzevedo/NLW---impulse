@@ -27,4 +27,4 @@ app
 .use(express.json())
 .use(routes);
 
-serverHttp.listen(port, () => console.log(`Server is running on PORT: ${port}`));
+export { serverHttp, io };
